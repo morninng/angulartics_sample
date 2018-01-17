@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SendLogService } from './../send-log.service';
+
 @Component({
   selector: 'app-test-test',
   templateUrl: './test-test.component.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestTestComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sendLogService: SendLogService) { }
 
   ngOnInit() {
+  }
+  sendevent() {
+    this.sendLogService.send();
   }
 
 }
