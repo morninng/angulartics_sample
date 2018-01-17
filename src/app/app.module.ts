@@ -7,6 +7,11 @@ import { AppComponent } from './app.component';
 import { TestTestComponent } from './test-test/test-test.component';
 
 
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
+import { SendLogService } from './send-log.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,9 +19,10 @@ import { TestTestComponent } from './test-test/test-test.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
   ],
-  providers: [],
+  providers: [SendLogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
